@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog 2</title>
+    <style>
+        body{
+            background-image: url('bg.png');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Blog 2</h1>
+    <p>This is the content of Blog 2. Sed quis lectus vel quam efficitur consequat. Sed euismod justo nisi, vel suscipit quam dictum id.</p>
+    
+    <button onclick="like('blog2')">Like</button>
+    <span id="likes_blog2">0</span> Likes
+    
+    <div>
+        <h2>Comments</h2>
+        <input type="text" id="comment_blog2" placeholder="Add a comment">
+        <button onclick="addComment('blog2')">Add Comment</button>
+        <ul id="comments_blog2"></ul>
+    </div>
+
+    <div><br><br><br><br></div>
+        <div class="social-icons" id="social-icon">
+            <a style="color: darkorange;" href="https://github.com/usr1236" target="_blank"><img style="width: 70px;" src="github_icon.png" alt="GitHub"></a>
+            <a style="color: darkorange;" href="mailto:youremail@example.com"><img style="width: 110px;" src="email_icon.png" alt="Email"></a>
+        </div>
+
+    <script src="script.js"></script>
+    <script>
+        
+        loadFromLocalStorage('blog2');
+
+        
+        var savedComments = JSON.parse(localStorage.getItem('blog2_comments')) || [];
+        var commentsList = document.getElementById('comments_blog2');
+        commentsList.innerHTML = ''; 
+        savedComments.forEach(function(comment) {
+            var li = document.createElement('li');
+            li.textContent = comment;
+            commentsList.appendChild(li);
+        });
+    </script>
+</body>
+</html>

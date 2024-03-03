@@ -1,0 +1,12 @@
+/* Responsive styles for mobile devices */
+@media only screen and (max-width: 767px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 95%;
+        margin: 10px auto;
+        padding: 10px;
+    }
+}
